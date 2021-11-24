@@ -41,6 +41,7 @@
             this.endGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDeckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -124,7 +125,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instructionsToolStripMenuItem});
+            this.instructionsToolStripMenuItem,
+            this.showDeckToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -134,6 +136,13 @@
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
             this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instructionsToolStripMenuItem.Text = "Instru&ctions";
+            // 
+            // showDeckToolStripMenuItem
+            // 
+            this.showDeckToolStripMenuItem.Name = "showDeckToolStripMenuItem";
+            this.showDeckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showDeckToolStripMenuItem.Text = "Sho&w Deck";
+            this.showDeckToolStripMenuItem.Click += new System.EventHandler(this.showDeckToolStripMenuItem_Click);
             // 
             // frmMainForm
             // 
@@ -167,6 +176,7 @@
         private System.Windows.Forms.ToolStripMenuItem rulesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showDeckToolStripMenuItem;
     }
 }
 

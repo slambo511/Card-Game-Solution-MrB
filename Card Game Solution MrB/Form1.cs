@@ -1,24 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Card_Game_Solution_MrB
 {
     public partial class frmMainForm : Form
     {
+        string[] cardNumbers = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+        string[] cardColours = { "red", "black", "yellow" };
+
+        string[] cards = new string[30];
+
+        Random rng = new Random();
+
         public frmMainForm()
         {
             InitializeComponent();
+            FillDeck();
+            Shuffle(cards);
+            
         }
 
-        string[] cardNumbers = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-        string[] cardColours = { "red", "black", "yellow" };
+        private string[] Shuffle<T>(T[] items)
+        {
+            for (int i = 0; i < cards.Length; i++)
+            {
+                int j = rng.Next(i, cards.Length);
+                T temp = items[i];
+                items[i] = items[j];
+                items[j] = temp;
+                return items[];
+            }
+        }
+
+        private void FillDeck()
+        {
+            // fill the deck with cards
+            int count = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    cards[count] = cardColours[i] + " " + cardNumbers[j];
+                    count++;
+                }
+            }
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -35,6 +62,14 @@ namespace Card_Game_Solution_MrB
                 Application.Exit();
             }
 
+        }
+
+        private void showDeckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                MessageBox.Show(cards[i]);
+            }
         }
     }
 }
