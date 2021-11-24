@@ -15,22 +15,24 @@ namespace Card_Game_Solution_MrB
 
         public frmMainForm()
         {
+            // Login Players
+
             InitializeComponent();
             FillDeck();
-            Shuffle(cards);
-            
+            string[] shuffledDeck = Shuffle(cards);
+            ListCards(shuffledDeck);
         }
 
-        private string[] Shuffle<T>(T[] items)
+        private string[] Shuffle(string[] items)
         {
             for (int i = 0; i < cards.Length; i++)
             {
                 int j = rng.Next(i, cards.Length);
-                T temp = items[i];
+                string temp = items[i];
                 items[i] = items[j];
                 items[j] = temp;
-                return items[];
             }
+            return items;
         }
 
         private void FillDeck()
@@ -66,9 +68,14 @@ namespace Card_Game_Solution_MrB
 
         private void showDeckToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ListCards(cards);
+        }
+
+        private void ListCards(string[] deck)
+        {
             for (int i = 0; i < 30; i++)
             {
-                MessageBox.Show(cards[i]);
+                MessageBox.Show(deck[i]);
             }
         }
     }
